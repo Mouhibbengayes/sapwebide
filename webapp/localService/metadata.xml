@@ -1,0 +1,176 @@
+<edmx:Edmx Version="1.0"
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value"
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value"
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value"
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value"
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value"
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value"
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value"
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value"
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value"
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value"
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="Z_CDS_SALARIES_MOUHIB_CDS" xml:lang="fr" sap:schema-version="1"
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0"
+                xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+                <EntityType Name="T001Type" sap:content-version="1">
+                    <Key>
+                        <PropertyRef Name="BUKRS"/>
+                    </Key>
+                    <Property Name="BUKRS" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Société"/>
+                    <Property Name="BUTXT" Type="Edm.String" MaxLength="25" sap:label="Nom société S/L"/>
+                    <Property Name="ORT01" Type="Edm.String" MaxLength="25" sap:label="Ville"/>
+                    <Property Name="LAND1" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Clé de pays/région"/>
+                    <Property Name="WAERS" Type="Edm.String" MaxLength="5" sap:label="Devise" sap:semantics="currency-code"/>
+                    <Property Name="SPRAS" Type="Edm.String" MaxLength="2" sap:label="Code langue"/>
+                    <Property Name="KTOPL" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Plan comptable"/>
+                    <Property Name="WAABW" Type="Edm.String" MaxLength="2" sap:display-format="NonNegative" sap:label="Différ.max.change"/>
+                    <Property Name="PERIV" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Version d'exercice"/>
+                    <Property Name="KOKFI" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Soc. -&gt; Périm. ana."/>
+                    <Property Name="RCOMP" Type="Edm.String" MaxLength="6" sap:display-format="UpperCase" sap:label="Société S/L"/>
+                    <Property Name="ADRNR" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Adresse"/>
+                    <Property Name="STCEG" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Nº ident. TVA sur CA"/>
+                    <Property Name="FIKRS" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Périm.financier"/>
+                    <Property Name="XFMCO" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="BdgtTrésProj. actif"/>
+                    <Property Name="XFMCB" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Bdgt de trés. actif"/>
+                    <Property Name="XFMCA" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Mettre à jour CB"/>
+                    <Property Name="TXJCD" Type="Edm.String" MaxLength="15" sap:display-format="UpperCase" sap:label="Jurisdiction Code"/>
+                    <Property Name="FMHRDATE" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Ctre fin.actif ds HR"/>
+                    <Property Name="XTEMPLT" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Modèle"/>
+                    <Property Name="TRANSIT_PLANT" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Division de transit"/>
+                    <Property Name="BUVAR" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Variante écran"/>
+                    <Property Name="FDBUK" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Soc. gestion trésor."/>
+                    <Property Name="XFDIS" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Gestion trés. active"/>
+                    <Property Name="XVALV" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Proposer date val."/>
+                    <Property Name="XSKFN" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Base escompte nette"/>
+                    <Property Name="KKBER" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Dom.contrôle crédits"/>
+                    <Property Name="XMWSN" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Base de TVA nette"/>
+                    <Property Name="MREGL" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Règles pr cpt. types"/>
+                    <Property Name="XGSBE" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Bilan domaine d'act."/>
+                    <Property Name="XGJRV" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Proposer exer.compt."/>
+                    <Property Name="XKDFT" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Comptab. conversion"/>
+                    <Property Name="XPROD" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Productive"/>
+                    <Property Name="XEINK" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Gestion cpte achats"/>
+                    <Property Name="XJVAA" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Comptab. JV active"/>
+                    <Property Name="XVVWA" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Gestion cap. active"/>
+                    <Property Name="XSLTA" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Aucun diff. de change pr rappr. en DI"/>
+                    <Property Name="XFDMM" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Imput.MM sur trés."/>
+                    <Property Name="XFDSD" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Imput. SD sur FD"/>
+                    <Property Name="XEXTB" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Société externe"/>
+                    <Property Name="EBUKR" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Code original"/>
+                    <Property Name="KTOP2" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Plan compt. altern."/>
+                    <Property Name="UMKRS" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Périmètre TVA sur CA"/>
+                    <Property Name="BUKRS_GLOB" Type="Edm.String" MaxLength="6" sap:display-format="UpperCase" sap:label="Société globale"/>
+                    <Property Name="FSTVA" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Variante statut zone"/>
+                    <Property Name="OPVAR" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Var. périodes compt."/>
+                    <Property Name="XCOVR" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Dem. garantie active"/>
+                    <Property Name="TXKRS" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Conversion cours TVA"/>
+                    <Property Name="WFVAR" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Variante Workflow"/>
+                    <Property Name="XBBBF" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Gestion des stocks"/>
+                    <Property Name="XBBBE" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Cde/Prog.livraisons"/>
+                    <Property Name="XBBBA" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Demande d'achat"/>
+                    <Property Name="XBBKO" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Contrat"/>
+                    <Property Name="XSTDT" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Déter. taxe avec date pce"/>
+                    <Property Name="MWSKV" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="TVA récup. non imp."/>
+                    <Property Name="MWSKA" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Code TVA coll."/>
+                    <Property Name="IMPDA" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Donn. import. cde"/>
+                    <Property Name="XNEGP" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Ecritures négatives autorisées"/>
+                    <Property Name="XKKBI" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Saisir dom.ctrle"/>
+                    <Property Name="WT_NEWWT" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Décl. honor. étendue"/>
+                    <Property Name="PP_PDATE" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Pré-enr.dte cpt."/>
+                    <Property Name="INFMT" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Méthode inflation"/>
+                    <Property Name="FSTVARE" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Var. statut zone"/>
+                    <Property Name="KOPIM" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="PilotCopieEntr.March"/>
+                    <Property Name="DKWEG" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Données import. EM"/>
+                    <Property Name="OFFSACCT" Type="Edm.String" MaxLength="1" sap:display-format="NonNegative" sap:label="Méthode Cpt.contrep."/>
+                    <Property Name="BAPOVAR" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Variante DA"/>
+                    <Property Name="XCOS" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Statut CRV"/>
+                    <Property Name="XCESSION" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Opér. cession act."/>
+                    <Property Name="XSPLT" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Fract. montant"/>
+                    <Property Name="SURCCM" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Surcharge Method"/>
+                    <Property Name="DTPROV" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Doc. Type"/>
+                    <Property Name="DTAMTC" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Doc. Type"/>
+                    <Property Name="DTTAXC" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Document Type"/>
+                    <Property Name="DTTDSP" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="RC Doc. Type"/>
+                    <Property Name="DTAXR" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Règle TVA différée"/>
+                    <Property Name="XVATDATE" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Date taxe"/>
+                    <Property Name="PST_PER_VAR" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Gérer période budg."/>
+                    <Property Name="XBBSC" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Panier"/>
+                    <Property Name="F_OBSOLETE" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Masquer entrée"/>
+                    <Property Name="FM_DERIVE_ACC" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Dériv.imp.act."/>
+                </EntityType>
+                <EntityType Name="Z_CDS_SALARIES_MOUHIBType" sap:content-version="1">
+                    <Key>
+                        <PropertyRef Name="Idsalarie"/>
+                    </Key>
+                    <Property Name="Idsalarie" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="NonNegative" sap:label="Nombre" sap:quickinfo="Zone pour nombre entier - longueur 3"/>
+                    <Property Name="Nom" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="char 20" sap:quickinfo="Char 20"/>
+                    <Property Name="Prenom" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="char 20" sap:quickinfo="Char 20"/>
+                    <Property Name="AdresMail" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="30 caractères" sap:heading=""/>
+                    <Property Name="Societe" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Domaine défini imprécisément, evtl. utilisable p. niv. patch" sap:heading=""/>
+                    <Property Name="DateNaissance" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Date" sap:quickinfo="Zone de type DATS"/>
+                    <Property Name="Pays" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="30 caractères" sap:heading=""/>
+                    <Property Name="Ville" Type="Edm.String" MaxLength="50" sap:label="c" sap:quickinfo="Commentaire"/>
+                    <Property Name="Adresse" Type="Edm.String" MaxLength="60" sap:display-format="UpperCase" sap:label="Système logique" sap:quickinfo="CHAR 60"/>
+                    <Property Name="Age" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Zone d'une longueur de 3 octets" sap:heading=""/>
+                    <Property Name="NomSociete" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Char" sap:quickinfo="Caractère à 40 positions"/>
+                    <NavigationProperty Name="to_Societe" Relationship="Z_CDS_SALARIES_MOUHIB_CDS.assoc_CAE84494A2C58B32910F5A54520C82C5" FromRole="FromRole_assoc_CAE84494A2C58B32910F5A54520C82C5" ToRole="ToRole_assoc_CAE84494A2C58B32910F5A54520C82C5"/>
+                </EntityType>
+                <Association Name="assoc_CAE84494A2C58B32910F5A54520C82C5" sap:content-version="1">
+                    <End Type="Z_CDS_SALARIES_MOUHIB_CDS.Z_CDS_SALARIES_MOUHIBType" Multiplicity="1" Role="FromRole_assoc_CAE84494A2C58B32910F5A54520C82C5"/>
+                    <End Type="Z_CDS_SALARIES_MOUHIB_CDS.T001Type" Multiplicity="0..1" Role="ToRole_assoc_CAE84494A2C58B32910F5A54520C82C5"/>
+                </Association>
+                <EntityContainer Name="Z_CDS_SALARIES_MOUHIB_CDS_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                    <EntitySet Name="T001" EntityType="Z_CDS_SALARIES_MOUHIB_CDS.T001Type" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                    <EntitySet Name="Z_CDS_SALARIES_MOUHIB" EntityType="Z_CDS_SALARIES_MOUHIB_CDS.Z_CDS_SALARIES_MOUHIBType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                    <AssociationSet Name="assoc_CAE84494A2C58B32910F5A54520C82C5" Association="Z_CDS_SALARIES_MOUHIB_CDS.assoc_CAE84494A2C58B32910F5A54520C82C5" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                        <End EntitySet="Z_CDS_SALARIES_MOUHIB" Role="FromRole_assoc_CAE84494A2C58B32910F5A54520C82C5"/>
+                        <End EntitySet="T001" Role="ToRole_assoc_CAE84494A2C58B32910F5A54520C82C5"/>
+                    </AssociationSet>
+                </EntityContainer>
+                <Annotations Target="Z_CDS_SALARIES_MOUHIB_CDS.Z_CDS_SALARIES_MOUHIB_CDS_Entities"
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                    <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                </Annotations>
+                <atom:link rel="self" href="./sap/Z_CDS_SALARIES_MOUHIB_CDS/$metadata"
+                    xmlns:atom="http://www.w3.org/2005/Atom"/>
+                    <atom:link rel="latest-version" href="./sap/Z_CDS_SALARIES_MOUHIB_CDS/$metadata"
+                        xmlns:atom="http://www.w3.org/2005/Atom"/>
+                    </Schema>
+                </edmx:DataServices>
+            </edmx:Edmx>
